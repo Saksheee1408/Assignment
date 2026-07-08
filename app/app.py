@@ -21,7 +21,7 @@ except Exception as e:
     print(f"Warning: Could not load model from {MODEL_PATH}. Error: {e}")
     model = None
 
-CLASSES = ['T-shirt_top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle_boot']
+CLASSES = sorted(['T-shirt_top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle_boot'])
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
