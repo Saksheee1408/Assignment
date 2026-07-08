@@ -1,0 +1,9 @@
+venv/
+dataset/
+__pycache__/
+*.pyc
+.DS_Store
+models/history_A.csv
+models/training_history.png
+models/confusion_matrix.png
+# Keep best_model_A.h5 if it's small enough (usually around 4MB for this CNN), but GitHub has a 100MB limit. 4MB is fine.

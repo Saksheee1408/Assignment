@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Classifier</title>
+    <meta name="description" content="State-of-the-art Image Classification System powered by Custom CNN">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Chart.js for Confidence Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>AI Vision</h1>
+            <p>Upload an image and let the neural network classify it.</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="drop-zone" id="drop-zone">
+                    <span class="drop-zone__prompt">Drag & Drop Image Here<br>or Click to Upload</span>
+                    <input type="file" name="file" id="file-input" class="drop-zone__input" accept="image/jpeg, image/png">
+                </div>
+                <div class="preview-container">
+                    <img id="image-preview" src="" alt="Image Preview" class="hidden">
+                </div>
+                <button id="predict-btn" class="btn primary-btn hidden">Analyze Image</button>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing...</p>
+                </div>
+            </div>
+
+            <div class="results-section hidden" id="results-section">
+                <h2>Prediction: <span id="predicted-class" class="highlight"></span></h2>
+                <div class="chart-container">
+                    <canvas id="confidenceChart"></canvas>
+                </div>
+                <div class="actions">
+                    <button id="export-btn" class="btn secondary-btn">Export History to CSV</button>
+                    <button id="reset-btn" class="btn outline-btn">Try Another</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
